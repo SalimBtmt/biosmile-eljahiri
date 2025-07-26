@@ -1,0 +1,35 @@
+# Robots.txt optimisé pour SEO dentaire BioSmile
+User-agent: *
+Allow: /
+
+# Interdire l'accès aux fichiers système
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.well-known/
+
+# Optimisation crawl budget
+Disallow: /search
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Autoriser spécifiquement les images
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# Googlebot optimisations
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Sitemap
+Sitemap: https://biosmile-marrakech.ma/sitemap.xml
+
+# Crawl-delay pour préserver les ressources serveur
+Crawl-delay: 1

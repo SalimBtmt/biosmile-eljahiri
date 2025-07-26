@@ -62,7 +62,7 @@ export default function MegaMenu() {
           {/* Logo - parfaitement centré */}
           <div className="flex justify-center">
             <img
-              src="/logoReda.png"
+              src="/images/logoReda.png"
               alt="Logo"
               className={`transition-all duration-300 object-contain ${
                 scrolled
