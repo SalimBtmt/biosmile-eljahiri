@@ -1,14 +1,22 @@
-import Link from "next/link";
-import Layout from "../components/Layout";
+import { SEO } from "../components/common/SEO";
+import Layout from "../components/common/Layout";
 
-const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <h1>About</h1>
-    <p>This is the about page</p>
-    <p>
-      <Link href="/">Go home</Link>
-    </p>
-  </Layout>
-);
+export default function AboutPage() {
+  return (
+    <Layout>
+      <SEO
+        title="À propos du cabinet dentaire BioSmile Marrakech"
+        description="Découvrez notre équipe, notre philosophie et notre approche centrée sur le patient. Cabinet dentaire BioSmile à Marrakech."
+        image="/images/og-about.jpg"
+      />
 
-export default AboutPage;
+      <main className="p-6">
+        <h1 className="text-2xl font-bold">À propos de nous</h1>
+        <p className="mt-4">
+          Le cabinet BioSmile est composé d’une équipe passionnée au service de
+          votre santé bucco-dentaire.
+        </p>
+      </main>
+    </Layout>
+  );
+}
