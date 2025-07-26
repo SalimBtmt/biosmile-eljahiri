@@ -29,7 +29,7 @@ User-agent: Googlebot-Image
 Allow: /images/
 
 # Sitemap
-Sitemap: https://biosmile-marrakech.ma/sitemap.xml
+Sitemap: https://dentistemarrakech.ma/sitemap.xml
 
 # Crawl-delay pour préserver les ressources serveur
 Crawl-delay: 1
