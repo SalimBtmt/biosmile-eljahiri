@@ -120,7 +120,12 @@ export default function MegaMenu() {
           {/* ------------ COLONNE 1 ------------ */}
           <div>
             <h3 className="font-bold text-[#3784b4] mb-4 text-lg">
-              SOINS & PROTHÈSES & IMPLANTS
+              <Link
+                href="/soins-protheses-implants"
+                className="hover:text-[#3784b4]"
+              >
+                SOINS & PROTHÈSES & IMPLANTS
+              </Link>
             </h3>
             <ul className="space-y-2 text-gray-700">
               <li>
@@ -163,7 +168,12 @@ export default function MegaMenu() {
           {/* ------------ COLONNE 2 ------------ */}
           <div>
             <h3 className="font-bold text-[#3784b4] mb-4 text-lg">
-              ESTHÉTIQUE & BLANCHIMENT
+              <Link
+                href="/esthetique-blanchiment"
+                className="hover:text-[#3784b4]"
+              >
+                ESTHÉTIQUE & BLANCHIMENT
+              </Link>
             </h3>
             <ul className="space-y-2 text-gray-700">
               <li>
@@ -196,7 +206,9 @@ export default function MegaMenu() {
           {/* ------------ COLONNE 3 ------------ */}
           <div>
             <h3 className="font-bold text-[#3784b4] mb-4 text-lg">
-              ORTHODONTIE
+              <Link href="/orthodontie" className="hover:text-[#3784b4]">
+                ORTHODONTIE
+              </Link>
             </h3>
             <ul className="space-y-2 text-gray-700">
               <li>
@@ -229,7 +241,9 @@ export default function MegaMenu() {
           {/* ------------ COLONNE 4 ------------ */}
           <div>
             <h3 className="font-bold text-[#3784b4] mb-4 text-lg">
-              PÉDODONTIE
+              <Link href="/pedodontie" className="hover:text-[#3784b4]">
+                PÉDODONTIE
+              </Link>
             </h3>
             <ul className="space-y-2 text-gray-700">
               <li>
