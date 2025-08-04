@@ -17,7 +17,7 @@ export default function HomePage() {
       title: "Esthétique & Blanchiment",
       image: "/images/flash.jpg",
       alt: "Blanchiment dentaire et soins esthétiques dentaires pour un sourire éclatant",
-      link: "/esthetique",
+      link: "/esthetique-blanchiment",
     },
     {
       title: "Orthodontie",

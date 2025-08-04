@@ -23,7 +23,8 @@ export const SEO = ({
   type = defaultMeta.type,
 }: Props) => {
   const { asPath } = useRouter();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://biosmile.ma";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://dentistemarrakech.ma";
   const url = canonical || `${baseUrl}${asPath}`;
 
   return (

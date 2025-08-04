@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: "Cabinet Dentaire BioSmile",
   description:
     "Cabinet dentaire moderne à Marrakech. Soins dentaires, implants, esthétique. Rendez-vous rapide avec des spécialistes expérimentés.",
-  url: "https://biosmile-marrakech.ma",
+  url: "https://dentistemarrakech.ma",
   ogImage: "/images/og-biosmile.jpg",
   creator: "Dr. El Jehiri",
   keywords: [
@@ -23,8 +23,8 @@ export const BUSINESS_INFO = {
 
   // Contact
   phone: "+212663588400",
-  email: "contact@biosmile-marrakech.ma",
-  website: "https://biosmile-marrakech.ma",
+  email: "contact@dentistemarrakech.ma",
+  website: "https://dentistemarrakech.ma",
 
   // Adresse
   address: {
@@ -38,10 +38,9 @@ export const BUSINESS_INFO = {
 
   // Coordonnées GPS (approximatives pour Bd Allal Al Fassi)
   coordinates: {
-    latitude: "31.6369",
-    longitude: "-8.0057",
+    latitude: "31.639394664532173",
+    longitude: "-7.999758982542849",
   },
-
   // Horaires
   openingHours: ["Mo-Fr 09:00-19:00", "Sa 09:00-14:00", "Su closed"],
 
