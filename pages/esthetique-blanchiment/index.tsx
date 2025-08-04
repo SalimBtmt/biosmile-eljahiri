@@ -17,7 +17,7 @@ const cards = [
     title: "Blanchiment Flash LED",
     description:
       "Technique professionnelle de blanchiment utilisant une lampe LED froide.",
-    link: "/blanchiment-fauteuil",
+    link: "/blanchiment-fauteuil-flash",
     image: "/images/blanchiment-flash-led.jpg",
     alt: "Blanchiment Flash LED au fauteuil",
   },

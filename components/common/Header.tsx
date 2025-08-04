@@ -56,13 +56,15 @@ export default function MegaMenu() {
 
           {/* Logo centré */}
           <div className="flex justify-center">
-            <img
-              src="/images/logoReda.png"
-              alt="Logo"
-              className={`object-contain transition-all duration-300 ${
-                scrolled ? "h-20 md:h-17" : "h-28 md:h-25"
-              }`}
-            />
+            <Link href="/">
+              <img
+                src="/images/logoReda.png"
+                alt="Logo"
+                className={`object-contain transition-all duration-300 ${
+                  scrolled ? "h-20 md:h-17" : "h-28 md:h-25"
+                }`}
+              />
+            </Link>
           </div>
 
           {/* Bouton menu (mobile & desktop) */}
