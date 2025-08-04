@@ -13,14 +13,14 @@ const cards = [
     description:
       "Prévention, soins des caries et traitements des gencives pour préserver votre santé bucco-dentaire.",
     link: "/soins-dentaires",
-    image: "/images/soins.jpg",
+    image: "/images/kids.jpg",
     alt: "Soins dentaires",
   },
   {
     title: "Prothèses",
     description:
       "Solutions sur-mesure pour restaurer l’esthétique et la fonctionnalité de votre sourire.",
-    link: "/protheses-implants",
+    link: "/protheses-dentaires",
     image: "/images/implants.jpg",
     alt: "Prothèses et implants",
   },
