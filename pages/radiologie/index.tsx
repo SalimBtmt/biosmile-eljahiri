@@ -2,6 +2,9 @@ import Head from "next/head";
 import { Scan, Eye, Target, CheckCircle, Camera } from "lucide-react";
 import ContactUs from "@/components/ContactUs";
 import PageHeader from "@/components/common/PageHeader";
+import Layout from "@/components/common/Layout";
+import Script from "next/script";
+import { SEO } from "@/components/seo/SEO";
 
 const imagingTypes = [
   {
@@ -84,38 +87,51 @@ const process = [
   },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "BioSmile Centre Dentaire",
-  url: "https://www.biosmile-marrakech.com/radiologie",
-  description: "Radiologie dentaire au cabinet BioSmile à Marrakech.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Adresse complète",
-    addressLocality: "Marrakech",
-    addressCountry: "MA",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+212XXXXXXXXX",
-    contactType: "customer service",
-  },
-};
-
 export default function RadiologiePage() {
+  const jsonLdService = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    name: "Radiologie dentaire",
+    description:
+      "Radiologie dentaire à Marrakech : panoramique, rétro-alvéolaire, imagerie 3D. Diagnostic précis au centre BioSmile.",
+    serviceType: "Radiologie dentaire",
+    provider: {
+      "@type": "Dentist",
+      name: "Dr EL JAHIRI Reda",
+      worksFor: {
+        "@type": "DentalPractice",
+        name: "Centre dentaire BioSmile",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Immeuble el baraka, 1er étage numéro 2, quartier bokar, Bd Allal Al Fassi",
+          addressLocality: "Marrakech",
+          postalCode: "40000",
+          addressCountry: "MA",
+        },
+      },
+    },
+  };
   return (
-    <>
+    <Layout>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
+        strategy="afterInteractive"
+      />
+
+      <SEO
+        title="Radiologie Dentaire Marrakech - Imagerie Précise | BioSmile"
+        description="Radiologie dentaire à Marrakech : panoramique, rétro-alvéolaire, imagerie 3D pour un diagnostic précis et fiable."
+        image="/images/og-radiologie.jpg"
+        canonical="/radiologie"
+      />
+
       <Head>
         <title>Radiologie Dentaire à Marrakech - BioSmile</title>
         <meta
           name="description"
           content="Des examens radiologiques simples et efficaces réalisés directement au cabinet BioSmile à Marrakech."
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          key="jsonld"
         />
       </Head>
 
@@ -277,6 +293,6 @@ export default function RadiologiePage() {
       </div>
 
       <ContactUs />
-    </>
+    </Layout>
   );
 }

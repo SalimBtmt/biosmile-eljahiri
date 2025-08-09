@@ -5,34 +5,43 @@ import Layout from "@/components/common/Layout";
 import ContactUs from "@/components/ContactUs";
 import Script from "next/script";
 
-export default function SoinsEsthetiques() {
-  const schemaOrganization = {
+export default function SoinsEsthetiquesPage() {
+  const jsonLdService = {
     "@context": "https://schema.org",
-    "@type": "Dentist",
-    name: "Centre dentaire BioSmile Marrakech",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress:
-        "Immeuble el baraka, 1er étage numéro 2, quartier bokar, Bd Allal Al Fassi",
-      addressLocality: "Marrakech",
-      postalCode: "40000",
-      addressCountry: "MA",
+    "@type": "MedicalService",
+    name: "Soins esthétiques dentaires",
+    description:
+      "Soins esthétiques dentaires à Marrakech : facettes, blanchiment et autres techniques pour un sourire éclatant.",
+    serviceType: "Soins esthétiques dentaires",
+    provider: {
+      "@type": "Dentist",
+      name: "Dr EL JAHIRI Reda",
+      worksFor: {
+        "@type": "DentalPractice",
+        name: "Centre dentaire BioSmile",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Immeuble el baraka, 1er étage numéro 2, quartier bokar, Bd Allal Al Fassi",
+          addressLocality: "Marrakech",
+          postalCode: "40000",
+          addressCountry: "MA",
+        },
+      },
     },
-    telephone: "+212 5 24 44 55 66",
-    url: "https://biosmile-marrakech.ma",
   };
 
   return (
     <Layout>
       <Script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
         strategy="afterInteractive"
       />
 
       <SEO
-        title="Soins Esthétiques Dentaires Marrakech | BioSmile"
-        description="Découvrez notre gamme de soins esthétiques dentaires à Marrakech : facettes, blanchiment, facettes et plus encore pour un sourire éclatant."
+        title="Soins Esthétiques Dentaires Marrakech - Facettes & Blanchiment | BioSmile"
+        description="Soins esthétiques dentaires à Marrakech : facettes, blanchiment et solutions modernes pour un sourire éclatant."
         image="/images/og-soins-esthetiques.jpg"
         canonical="/soins-esthetiques"
       />

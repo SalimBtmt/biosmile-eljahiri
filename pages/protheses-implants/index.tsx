@@ -2,6 +2,9 @@ import Head from "next/head";
 import { Crown, Wrench, Shield, Heart, CheckCircle } from "lucide-react";
 import ContactUs from "@/components/ContactUs";
 import PageHeader from "@/components/common/PageHeader";
+import Layout from "@/components/common/Layout";
+import Script from "next/script";
+import { SEO } from "@/components/seo/SEO";
 
 // Données statiques
 const prosthesisTypes = [
@@ -57,41 +60,52 @@ const process = [
   },
 ];
 
-// JSON-LD Schema pour prothèses dentaires (exemple simplifié)
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "BioSmile Centre Dentaire",
-  url: "https://www.biosmile-marrakech.com/protheses-dentaires",
-  logo: "https://www.biosmile-marrakech.com/logo.png",
-  description:
-    "Prothèses dentaires sur-mesure à Marrakech, solutions modernes et personnalisées.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Adresse complète du cabinet",
-    addressLocality: "Marrakech",
-    addressCountry: "MA",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+212XXXXXXXXX",
-    contactType: "customer service",
-  },
-};
-
 export default function ProthesesDentairesPage() {
+  const jsonLdService = {
+    "@context": "https://schema.org",
+    "@type": "MedicalService",
+    name: "Prothèses dentaires sur-mesure",
+    description:
+      "Prothèses dentaires à Marrakech : solutions fixes ou amovibles, esthétiques et confortables. Centre BioSmile.",
+    serviceType: "Prothèses dentaires",
+    provider: {
+      "@type": "Dentist",
+      name: "Dr EL JAHIRI Reda",
+      worksFor: {
+        "@type": "DentalPractice",
+        name: "Centre dentaire BioSmile",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Immeuble el baraka, 1er étage numéro 2, quartier bokar, Bd Allal Al Fassi",
+          addressLocality: "Marrakech",
+          postalCode: "40000",
+          addressCountry: "MA",
+        },
+      },
+    },
+  };
+
   return (
-    <>
+    <Layout>
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
+        strategy="afterInteractive"
+      />
+
+      <SEO
+        title="Prothèses Dentaires Marrakech - Confort & Esthétique | BioSmile"
+        description="Prothèses dentaires sur-mesure à Marrakech. Solutions fixes ou amovibles pour restaurer votre sourire avec confort et esthétisme."
+        image="/images/og-protheses-dentaires.jpg"
+        canonical="/protheses-dentaires"
+      />
+
       <Head>
         <title>Prothèses Dentaires à Marrakech - BioSmile</title>
         <meta
           name="description"
           content="Retrouvez le sourire et le confort avec nos prothèses dentaires sur-mesure au centre BioSmile de Marrakech."
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          key="jsonld"
         />
       </Head>
 
@@ -298,6 +312,6 @@ export default function ProthesesDentairesPage() {
       </main>
 
       <ContactUs />
-    </>
+    </Layout>
   );
 }
