@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import SEO_CONFIG from "@/lib/seo-config";
 import { Montserrat } from "next/font/google";
+import FloatingWhatsapp from "@/components/common/FloatingWhatsapp";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       {/* Application */}
       <Component {...pageProps} />
+      <FloatingWhatsapp />
     </div>
   );
 }
